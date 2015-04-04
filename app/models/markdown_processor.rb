@@ -15,8 +15,14 @@ class MarkdownProcessor
 
   def processed_html
     doc = Nokogiri::HTML(html)
-  end
+    doc.css("a").each do |link|
+      href = link["href"]
+      new_href = Link.new(href, @request.original_url).parsed_href
 
+      link["href"] = new_href
+    end
+    doc
+  end
 
   private
 
