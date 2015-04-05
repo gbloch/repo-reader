@@ -18,5 +18,10 @@ end
 
 group :development, :test do
   gem "spring"
+end
+
+group :test do
+  gem "capybara"
   gem "rspec-rails", "~> 3.0"
+  gem "webmock"
 end
