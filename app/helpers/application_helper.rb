@@ -1,9 +1,9 @@
 module ApplicationHelper
   def markdown_to_html
-    markdown.processed_html
+    MarkdownProcessor.new(request).processed_html
   end
 
-  def markdown
-    MarkdownProcessor.new(request)
+  def breadcrumb
+    Breadcrumb.new(request.original_url).breadcrumb
   end
 end
