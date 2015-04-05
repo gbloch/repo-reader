@@ -6,13 +6,13 @@ RSpec.describe "Guest reads article" do
     create_temp_markdown(file_name)
     stub_request_to_file(file_name)
 
-    visit root_path
+    visit "/org/repo/branch"
 
     expect(page).to have_content "Hi"
     expect(page).to have_css "a[href='http://www.example.com']"
-    expect(page).to have_css "a[href='/directory/file']"
-    expect(page).to have_css "a[href='/file']"
-    expect(page).to have_css "img[src='#{ENV["BASE_PATH"]}/images/image.png']"
+    expect(page).to have_css "a[href='/org/repo/branch/directory/file']"
+    expect(page).to have_css "a[href='/org/repo/branch/file']"
+    expect(page).to have_css "img[src='#{ENV["BASE_PATH"]}/org/repo/branch/image.png']"
   end
 
   private
@@ -23,12 +23,13 @@ RSpec.describe "Guest reads article" do
       file.puts "[link](http://www.example.com)" 
       file.puts "[link](directory/file)" 
       file.puts "[link](/file)" 
-      file.puts "![image](/images/image.png 'Alt')"
+      file.puts "![image](/image.png 'Alt')"
     end
   end
 
   def stub_request_to_file(file_name)
-    stub_request(:any, "https://raw.githubusercontent.com/README.md")
+    path = "#{ENV["BASE_PATH"]}/org/repo/branch/README.md"
+    stub_request(:any, path)
       .to_return(body: File.new("/tmp/#{file_name}"))
   end
 end
