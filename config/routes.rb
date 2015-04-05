@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "welcome#index"
 
-  get "*fake_url_segment", to: "book#index"
+  post "book", to: "book#index"
+
+  get "*fake_url_segment", to: "book#show"
 end
