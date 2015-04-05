@@ -8,6 +8,10 @@ class Link
     absolute || relative_to_document || relative_to_document_root
   end
 
+  def absolute_path
+    absolute || File.join(ENV["BASE_PATH"], path_to_branch, @href.path)
+  end
+
   private
 
   def absolute

@@ -11,6 +11,7 @@ RSpec.describe "Guest reads article" do
     expect(page).to have_css "a[href='http://www.example.com']"
     expect(page).to have_css "a[href='/directory/file']"
     expect(page).to have_css "a[href='/file']"
+    expect(page).to have_css "img[src='#{ENV["BASE_PATH"]}/images/image.png']"
   end
 
   private
@@ -21,6 +22,7 @@ RSpec.describe "Guest reads article" do
       file.puts "[link](http://www.example.com)" 
       file.puts "[link](directory/file)" 
       file.puts "[link](/file)" 
+      file.puts "![image](/images/image.png 'Alt')"
     end
   end
 

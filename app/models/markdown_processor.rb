@@ -7,14 +7,19 @@ require "uri"
 class MarkdownProcessor
   attr_reader :request
 
-  BASE = "https://raw.githubusercontent.com/"
-
   def initialize(request)
     @request = request
   end
 
   def processed_html
     doc = Nokogiri::HTML(html)
+    doc.css("img").each do |link|
+      src = link["src"]
+      new_src = Link.new(src, @request.original_url).absolute_path
+
+      link["src"] = new_src
+    end
+
     doc.css("a").each do |link|
       href = link["href"]
       new_href = Link.new(href, @request.original_url).parsed_href
