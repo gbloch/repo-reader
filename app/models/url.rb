@@ -12,15 +12,15 @@ class Url
   end
 
   def organization
-    parsed_path_array[1]
+    parsed_path_array[1] || ""
   end
 
   def repository
-    parsed_path_array[2]
+    parsed_path_array[2] || ""
   end
 
   def branch
-    parsed_path_array[3]
+    parsed_path_array[3] || ""
   end
 
   private
