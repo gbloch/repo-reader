@@ -49,7 +49,7 @@ class MarkdownProcessor
   end
 
   def git_raw_path
-    File.join(BASE, local_path)
+    File.join(ENV["BASE_PATH"], local_path)
   end
 
   def local_path
