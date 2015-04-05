@@ -1,15 +1,30 @@
-<h1>Home</h1>
+<div class="layout layout--feature">
+  <div>
+    <h1 class="layout--feature__heading">
+      GitReader
+    </h1>
+    <h4 class="layout--feature__sub-heading">
+      Read books and guides hosted on github
+    </h4>
+    <%= form_tag({controller: "book", action: "index"}, method: "post") do %>
+      <%= text_field_tag :url, nil, required: true, placeholder: "/org/repo/branch" %>
+      <%= submit_tag "Read", class: "button button--large" %>
+    <% end %>
+  </div>
+</div>
 
-<%= form_tag({controller: "book", action: "index"}, method: "post") do %>
-  <%= text_field_tag(:url) %>
-  <%= submit_tag("Read") %>
-<% end %>
-
-<h1> Featured Guides & Books</h1>
-<a href="/thoughtbot/guides/master">
-  <h4>Thoughtbot Guide Book</h4>
-</a>
-
-<a href="/thoughtbot/design-sprint/master">
-  <h4>Thoughtbot Design Sprint Book</h4>
-</a>
+<div class="layout layout--padded">
+  <div class="layout__content">
+    <h1 class="layout__content__heading">Featured Guides & Books</h1>
+    <article class="row">
+      <h4>Thoughtbot Guide Book</h4>
+      <p>A guide for programming in style.<p>
+      <a class="button" href="/thoughtbot/guides/master">Read</a>
+    </article>
+    <article class="row">
+      <h4>Thoughtbot Design Sprint Book</h4>
+      <p>Product design sprint material</p>
+      <a class="button" href="/thoughtbot/design-sprint/master">Read</a>
+    </article>
+  </div>
+</div>
