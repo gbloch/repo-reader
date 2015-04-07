@@ -17,11 +17,17 @@
   <div class="layout__content">
     <h1 class="layout__content__heading">Featured Guides & Books</h1>
     <article class="row">
+      <span class="row__detail">
+        <i class="fa fa-star with-text-on-right"></i><%= stargazers_count("/thoughtbot/guides") %>
+      </span>
       <h4>Thoughtbot Guide Book</h4>
       <p>A guide for programming in style.<p>
       <a class="button" href="/thoughtbot/guides/master">Read</a>
     </article>
     <article class="row">
+      <span class="row__detail">
+        <i class="fa fa-star with-text-on-right"></i><%= stargazers_count("/thoughtbot/design-sprint") %>
+      </span>
       <h4>Thoughtbot Design Sprint Book</h4>
       <p>Product design sprint material</p>
       <a class="button" href="/thoughtbot/design-sprint/master">Read</a>

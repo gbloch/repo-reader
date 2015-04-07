@@ -6,4 +6,8 @@ module ApplicationHelper
   def breadcrumb
     Breadcrumb.new(request.original_url).breadcrumb
   end
+
+  def stargazers_count(url)
+    Stars.new(url).stargazers_count
+  end
 end

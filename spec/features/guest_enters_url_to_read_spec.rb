@@ -1,6 +1,10 @@
 require "rails_helper"
 
 RSpec.describe "Guest enters url to read" do
+  before do
+    stub_request(:any, %r{https://api.github.com/.*})
+  end
+
   it "and is redirected to the book view of that repo" do
     file_name = "file.md"
     create_temp_markdown(file_name)
