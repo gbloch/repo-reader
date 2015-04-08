@@ -23,7 +23,7 @@ RSpec.describe Feature do
   describe "#stargazers_count" do
     it "returns the number of stargazers for the repository" do
       stargazers_count = @feature.stargazers_count
-      expect(stargazers_count).to eq 99
+      expect(stargazers_count).to eq "99"
     end
   end
 

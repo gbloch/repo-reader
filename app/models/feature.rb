@@ -7,7 +7,9 @@ class Feature
   end
 
   def avatar_url
-    @api_response["owner"]["avatar_url"]
+    if @api_response["owner"]
+      @api_response["owner"]["avatar_url"]
+    end
   end
 
   def description
