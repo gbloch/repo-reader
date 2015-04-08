@@ -27,6 +27,13 @@ RSpec.describe Feature do
     end
   end
 
+  describe "#avatar_url" do
+    it "returns the avatar url of the owner of the repository" do
+      avatar_url = @feature.avatar_url
+      expect(avatar_url).to eq "https://example.com/image"
+    end
+  end
+
   private
 
   def json_response
@@ -37,7 +44,10 @@ RSpec.describe Feature do
     json = {
       description: "This is the description.",
       name: "Name",
-      stargazers_count: 99
+      stargazers_count: 99,
+      owner: {
+        avatar_url: "https://example.com/image"
+      }
     }
     json.to_json
   end
