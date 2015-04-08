@@ -14,10 +14,12 @@
 </div>
 
 <div class="layout layout--padded">
-  <div class="layout__content">
+  <div class="layout__content--slim">
     <h1 class="layout__content__heading">Featured Guides & Books</h1>
+    <%= render partial: "feature", locals: { url: "/facebook/react-native" } %>
+    <%= render partial: "feature", locals: { url: "/ripienaar/free-for-dev" } %>
+    <%= render partial: "feature", locals: { url: "/lukehoban/es6features" } %>
     <%= render partial: "feature", locals: { url: "/thoughtbot/guides" } %>
     <%= render partial: "feature", locals: { url: "/thoughtbot/design-sprint" } %>
-    <%= render partial: "feature", locals: { url: "/lukehoban/es6features" } %>
   </div>
 </div>
