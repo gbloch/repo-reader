@@ -1,4 +1,6 @@
 class Feature
+  include ActionView::Helpers::NumberHelper
+
   def initialize(url)
     @url = url
     @api_response = api_response
@@ -17,7 +19,8 @@ class Feature
   end
 
   def stargazers_count
-    @api_response["stargazers_count"]
+    count = @api_response["stargazers_count"].to_i
+    number_with_delimiter(count, delimiter: ",")
   end
 
   private
