@@ -20,8 +20,8 @@ RSpec.describe "Guest enters url to read" do
   private
 
   def create_temp_markdown(file_name)
-    File.open("/tmp/#{file_name}", "w") do |file| 
-      file.puts "# Hi" 
+    File.open("/tmp/#{file_name}", "w") do |file|
+      file.puts "# Hi"
     end
   end
 

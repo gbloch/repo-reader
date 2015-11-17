@@ -18,11 +18,11 @@ RSpec.describe "Guest reads article" do
   private
 
   def create_temp_markdown(file_name)
-    File.open("/tmp/#{file_name}", "w") do |file| 
-      file.puts "# Hi" 
-      file.puts "[link](http://www.example.com)" 
-      file.puts "[link](directory/file)" 
-      file.puts "[link](/file)" 
+    File.open("/tmp/#{file_name}", "w") do |file|
+      file.puts "# Hi"
+      file.puts "[link](http://www.example.com)"
+      file.puts "[link](directory/file)"
+      file.puts "[link](/file)"
       file.puts "![image](/image.png 'Alt')"
     end
   end

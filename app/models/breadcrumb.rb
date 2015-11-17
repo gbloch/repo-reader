@@ -22,7 +22,7 @@ class Breadcrumb
     array = URI::parse(@url).path.split("/")
     array.reject(&:empty?)
   end
-  
+
   def path_segment_href(index)
     path_segment_href = ""
     for i in 0..index
