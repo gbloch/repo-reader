@@ -1,0 +1,13 @@
+.content {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 0 5rem;
+
+  @media (min-width: $small-screen) {
+    max-width: 760px;
+  }
+}
+
+.content__heading {
+  text-align: center;
+}
