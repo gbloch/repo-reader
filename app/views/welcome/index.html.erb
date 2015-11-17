@@ -1,25 +1,5 @@
-<div class="layout layout--feature">
-  <div>
-    <h1 class="layout--feature__heading">
-      GitReader
-    </h1>
-    <h4 class="layout--feature__sub-heading">
-      Read books and guides hosted on github
-    </h4>
-    <%= form_tag({controller: "book", action: "index"}, method: "post") do %>
-      <%= text_field_tag :url, nil, required: true, placeholder: "/org/repo/branch" %>
-      <%= submit_tag "Read", class: "button button--large" %>
-    <% end %>
-  </div>
-</div>
-
-<div class="layout layout--padded">
-  <div class="layout__content--slim">
-    <h1 class="layout__content__heading">Featured Guides & Books</h1>
-    <%= render partial: "feature", locals: { url: "/facebook/react-native" } %>
-    <%= render partial: "feature", locals: { url: "/ripienaar/free-for-dev" } %>
-    <%= render partial: "feature", locals: { url: "/lukehoban/es6features" } %>
-    <%= render partial: "feature", locals: { url: "/thoughtbot/guides" } %>
-    <%= render partial: "feature", locals: { url: "/thoughtbot/design-sprint" } %>
+<div class="layout">
+  <div class="content">
+    <%= render partial: "repository_card", locals: { url: "/facebook/react-native" } %>
   </div>
 </div>

@@ -1,5 +1,16 @@
-<nav class="navigation">
-  <div class="content">
-    <%= raw breadcrumb %>
-  </div>
-</nav>
+<header class="navigation">
+  <nav>
+    <img src="" class="navigation__logo">
+    <% if true %>
+      <div class="search content">
+        <%= form_tag({controller: "book", action: "index"}, method: "post") do %>
+          <%= text_field_tag :url, nil, required: true, placeholder: "" %>
+          <%= submit_tag "" %>
+        <% end %>
+      </div>
+    <% else %>
+      <%= raw breadcrumb %>
+      Search
+    <% end %>
+  </nav>
+</header>
