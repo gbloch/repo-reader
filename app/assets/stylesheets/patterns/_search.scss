@@ -9,7 +9,6 @@
 
   input[type="text"] {
     background-color: rgba(black, 0.15);
-    padding-right: 0;
     transition: background-color 250ms;
     width: 100%;
 
@@ -19,7 +18,7 @@
   }
 
   input[type="submit"] {
-    @include position(absolute, 0.15rem 0px null null);
+    @include position(absolute, 0.15rem 1.5rem null null);
     background-color: transparent;
     background-image: image-url("magnifying-glass.svg");
     background-position: center center;
