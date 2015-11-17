@@ -1,23 +1,21 @@
-development:
+development: &default
   adapter: postgresql
-  encoding: unicode
   database: repo_reader_development
+  encoding: unicode
+  host: localhost
   pool: 5
-  username: jasonramirez
-  password: password
+  # username: jasonramirez
+  # password: password
 
 test:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: repo_reader_test
-  pool: 5
-  username: jasonramirez
-  password: password
 
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: repo_reader_production
+production: &deploy
+  encoding: utf8
+  min_messages: warning
   pool: 5
-  username: jasonramirez
-  password: password
+  timeout: 5000
+  # url:  <%= ENV.fetch("DATABASE_URL", "") %>
+
+staging: *deploy
