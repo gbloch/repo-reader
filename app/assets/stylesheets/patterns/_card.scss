@@ -1,0 +1,38 @@
+.card {
+  background: white;
+  font-family: "Lato";
+  font-weight: 300;
+  padding: 1.5rem 1.5rem 2.5rem;
+  margin-bottom: 4rem;
+
+  @include media($small-screen) {
+    @include span-columns(6);
+  }
+
+  @include media($x-large-screen) {
+    @include span-columns(4);
+  }
+
+  h3 {
+    font-family: "Lato";
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+  }
+
+  small {
+    color: lighten($dark-gray, 50%);
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  p {
+    color: lighten($dark-gray, 20%);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  footer {
+    margin-top: 2rem;
+    text-align: center;
+  }
+}

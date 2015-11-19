@@ -1,5 +1,14 @@
 <div class="layout">
-  <div class="content">
-    <%= render partial: "repository_card", locals: { url: "/facebook/react-native" } %>
+  <div class="content search-wrapper">
+    <%= render "search" %>
+  </div>
+</div>
+
+<div class="layout">
+  <div class="content content--grid">
+    <%= render partial: "repository_card",
+        locals: { url: "/facebook/react-native" } %>
+    <%= render partial: "repository_card",
+        locals: { url: "/facebook/react-native" } %>
   </div>
 </div>

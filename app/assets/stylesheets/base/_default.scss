@@ -7,7 +7,8 @@ html {
 }
 
 body {
-  background: #fbfbfb;
+  color: $base-font-color;
+  background: $base-background-color;
   padding: 0;
   margin: 0;
 }
@@ -22,7 +23,7 @@ img {
 }
 
 a {
-  color: #2D86C9;
+  color: $primary-color;
   text-decoration: none;
 }
 

@@ -1,8 +1,7 @@
 .button {
-  background-color: $primary-button-color;
-  border-radius: 2px;
-  border: none;
-  color: lighten($primary-button-color, 30%);
+  background-color: $primary-button-background-color;
+  border: $primary-button-border;
+  color: $primary-button-color;
   cursor: pointer;
   display: inline-block;
   font-family: $primary-button-font;
@@ -12,13 +11,18 @@
   transition: all 0.5s;
 
   &:hover {
-    background-color: lighten($primary-button-color, 5%);
+    background-color: $primary-color;
+    color: white;
   }
 }
 
-.button--large {
-  border: solid 1px $primary-button-color;
-  padding: 0.5rem 2.5rem;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
+.button--secondary {
+  background-color: $secondary-button-background-color;
+  border: $secondary-button-border;
+  color: $secondary-button-color;
+
+  &:hover {
+    background-color: $secondary-color;
+    color: white;
+  }
 }

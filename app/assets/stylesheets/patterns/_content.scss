@@ -1,13 +1,26 @@
 .content {
-  padding: 0 1rem;
-  max-width: 680px;
+  max-width: $small-screen;
   margin: 0 auto;
+  padding: 0 1rem;
+}
 
-  @media (min-width: $small-screen) {
-    max-width: 760px;
+.content--grid {
+  max-width: $small-screen;
+
+  @include media($small-screen) {
+    max-width: $large-screen;
   }
+
+  @include media($large-screen) {
+    max-width: $x-large-screen;
+  }
+}
+
+.content--reading {
+  max-width: $small-screen;
 }
 
 .content__heading {
   text-align: center;
 }
+

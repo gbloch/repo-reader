@@ -1,23 +1,39 @@
 // Colors
 $blue: #51a1ef;
-
-// Colors in action
-$primary-color: #9056B8;
-$secondary-color: #62A2ED;
+$purple: #9013FE;
+$light-gray: #EBEBEB;
 $dark-gray: #333;
 
+// Colors as Theme
+$primary-color: $purple;
+$secondary-color: $light-gray;
+
+// Colors in action
+$base-background-color: $light-gray;
+$reading-background-color: lighten($light-gray, 7%);
+$base-font-color: $dark-gray;
+
 // Fonts
-$sans-serif-font: "Open Sans", sans-serif;
-$serif-font: "Patua One", cursive;
-$serif-font-alt: "Merriwearther", serif;
+$sans-serif-font: "Lato", sans-serif;
+$serif-font: "Merriweather", cursive;
+$serif-font-alt: "Merriweather", serif;
 $base-font-size: 1rem;
 $base-font-color: $dark-gray;
 $base-font-family: $serif-font-alt;
 $heading-font-family: $serif-font;
 
 // Buttons
-$primary-button-color: $secondary-color;
+$primary-button-border: solid 3px $primary-color;
+$primary-button-color: $primary-color;
+$primary-button-background-color: transparent;
 $primary-button-font: $sans-serif-font;
+
+$secondary-button-border: solid 3px $secondary-color;
+$secondary-button-color: darken($light-gray, 20%);
+$secondary-button-background-color: transparent;
+$secondary-button-font: $sans-serif-font;
 
 // Screen Sizes
 $small-screen: 640px;
+$large-screen: 840px;
+$x-large-screen: 1240px;

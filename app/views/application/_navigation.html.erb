@@ -1,11 +1,13 @@
-<header class="navigation">
-  <nav>
-    <img src="" class="navigation__logo">
-    <% if true %>
-      <%= render "search" %>
-    <% else %>
-      <%= raw breadcrumb %>
-      Search
-    <% end %>
-  </nav>
-</header>
+<% unless current_page?(root_url) %>
+  <header class="navigation">
+    <nav>
+      <img src="" class="navigation__logo">
+      <span class="navigation__breadcrumb">
+        <%= raw breadcrumb %>
+      </span>
+      <span class="navigation__search">
+        <%= link_to "Search", root_path %>
+      </span>
+    </nav>
+  </header>
+<% end %>

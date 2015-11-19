@@ -1,17 +1,26 @@
 <article class="card">
-  <h4 class="card__heading">
-    <%= feature(url).name %>
-  </h4>
-  <small>
-    url
-  </small>
-    <a href="<%= url %>/master">Read</a>
-  <p>
-    <%= feature(url).description %>
-  <p>
-    <span class="row__detail__meta">
+  <header>
+    <h3>
+      Title For Repo
+      <%= feature(url).name %>
+    </h3>
+  </header>
+  <article>
+    <small>
+      <%= url %>
+    </small>
+    <p>
+      This is some description about a repo.
+      <%= feature(url).description %>
+    </p>
+  </article>
+  <footer>
+    <a class="button" href="<%= url %>/master">
+      Read
+    </a>
+    <div class="button button--secondary">
       <i class="fa fa-star with-text-on-right"></i>
       <%= feature(url).stargazers_count %>
-    </span>
-  </div>
+    </div>
+  </footer>
 </article>
