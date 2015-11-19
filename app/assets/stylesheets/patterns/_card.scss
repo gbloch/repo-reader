@@ -1,16 +1,20 @@
 .card {
+  position: relative;
+  min-height: 360px;
   background: white;
   font-family: "Lato";
   font-weight: 300;
   padding: 1.5rem 1.5rem 2.5rem;
   margin-bottom: 4rem;
 
-  @include media($small-screen) {
+  @include media(min-width $small-screen max-width $x-large-screen) {
     @include span-columns(6);
+    @include omega(2n);
   }
 
   @include media($x-large-screen) {
     @include span-columns(4);
+    @include omega(3n);
   }
 
   h3 {
@@ -32,6 +36,7 @@
   }
 
   footer {
+    @include position(absolute, null 1.5rem 2.5rem 1.5rem);
     margin-top: 2rem;
     text-align: center;
   }

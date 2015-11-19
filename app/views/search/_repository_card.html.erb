@@ -1,26 +1,23 @@
 <article class="card">
   <header>
     <h3>
-      Title For Repo
-      <%= feature(url).name %>
+      <%= repository["name"] %>
     </h3>
   </header>
   <article>
     <small>
-      <%= url %>
+      <%= repository["full_name"] %>
     </small>
     <p>
-      This is some description about a repo.
-      <%= feature(url).description %>
+      <%= truncate(repository["description"], length: 60) %>
     </p>
   </article>
   <footer>
-    <a class="button" href="<%= url %>/master">
+    <a class="button" href="<%= repository["full_name"] %>/master">
       Read
     </a>
     <div class="button button--secondary">
       <i class="fa fa-star with-text-on-right"></i>
-      <%= feature(url).stargazers_count %>
     </div>
   </footer>
 </article>

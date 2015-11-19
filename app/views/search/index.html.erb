@@ -1,0 +1,13 @@
+<div class="layout">
+  <div class="content search-wrapper">
+    <%= render "search" %>
+  </div>
+</div>
+
+<section class="layout">
+  <section class="content content--grid">
+    <% @repositories.each do |repository| %>
+      <%= render partial: "repository_card", locals: { repository: repository } %>
+    <% end %>
+  </section>
+</section>

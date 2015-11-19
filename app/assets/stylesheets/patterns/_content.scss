@@ -11,7 +11,7 @@
     max-width: $large-screen;
   }
 
-  @include media($large-screen) {
+  @include media($x-large-screen) {
     max-width: $x-large-screen;
   }
 }

@@ -1,6 +1,6 @@
 <div class="search content">
-  <%= form_tag({controller: "book", action: "index"}, method: "post") do %>
-    <%= text_field_tag :url, nil, required: true, placeholder: "Search GitHub Repositories" %>
+  <%= form_tag(controller: "search", action: "search", method: "post") do %>
+    <%= text_field_tag :repo, nil, required: true, placeholder: "Search GitHub Repositories" %>
     <%= submit_tag "", id: :search_submit %>
   <% end %>
 </div>

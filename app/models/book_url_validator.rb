@@ -20,7 +20,7 @@ class BookUrlValidator
   def add_branch
     if branch?
       @url = File.join(@url, "master")
-    end 
+    end
   end
 
   def relative?
