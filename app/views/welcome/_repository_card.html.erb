@@ -1,13 +1,14 @@
-<article class="row">
-  <img class="row__avatar" src="<%= feature(url).avatar_url %>" />
-  <div class="row__detail">
-    <h4 class="row__detail__heading">
-      <%= feature(url).name %>
-    </h4>
-    <p>
-      <%= feature(url).description %>
-    <p>
-    <a class="button" href="<%= url %>/master">Read</a>
+<article class="card">
+  <h4 class="card__heading">
+    <%= feature(url).name %>
+  </h4>
+  <small>
+    url
+  </small>
+    <a href="<%= url %>/master">Read</a>
+  <p>
+    <%= feature(url).description %>
+  <p>
     <span class="row__detail__meta">
       <i class="fa fa-star with-text-on-right"></i>
       <%= feature(url).stargazers_count %>

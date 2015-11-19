@@ -12,7 +12,7 @@ RSpec.describe "Guest enters url to read" do
 
     visit root_path
     fill_in "url", with: "org/repo/branch"
-    click_button "Read"
+    click_button("search_submit")
 
     expect(page).to have_content "Hi"
   end
