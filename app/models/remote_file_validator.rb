@@ -6,7 +6,9 @@ class RemoteFileValidator
     "README.md",
     "readme.md",
     "Readme.md",
-    "readme.markdown"
+    "readme.markdown",
+    "readme.rdoc",
+    "README.rdoc",
   ]
 
   def initialize(request)
@@ -18,12 +20,18 @@ class RemoteFileValidator
     begin
       open(remote_file_path)
     rescue OpenURI::HTTPError => error
-      if error.message == "404 Not Found" and @index <= README_VARIATIONS.count
-        @index += 1
-        remote_file
-      else
-        error.message
-      end
+      retry_on_error(error)
+    end
+  end
+
+  private
+
+  def retry_on_error(error)
+    if @index == README_VARIATIONS.count - 1
+      error.message
+    elsif error.message == "404 Not Found"
+      @index += 1
+      remote_file
     end
   end
 

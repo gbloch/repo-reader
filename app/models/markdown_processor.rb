@@ -24,7 +24,11 @@ class MarkdownProcessor
   end
 
   def remote_file_body
-    @remote_file.read
+    unless @remote_file.nil? || @remote_file.is_a?(String)
+      @remote_file.read
+    else
+      @remote_file
+    end
   end
 
   def update_images_in_document(document)

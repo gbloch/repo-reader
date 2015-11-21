@@ -11,6 +11,16 @@ RSpec.describe MarkdownProcessor do
         expect(response).to include "Hello world!"
       end
     end
+
+    context "without a file" do
+      it "returns processed markdown" do
+        request = stub_request_with_path("readme.md", [404, "Not Found"])
+
+        response = MarkdownProcessor.new(request).html
+
+        expect(response).not_to  include "Hello world!"
+      end
+    end
   end
 
   def stub_request_with_path(path, status)
