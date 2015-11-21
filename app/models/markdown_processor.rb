@@ -1,79 +1,47 @@
-require "cgi"
-require "kramdown"
-require "open-uri"
-require "pry"
-require "uri"
-
 class MarkdownProcessor
+  require "cgi"
+  require "kramdown"
+
   attr_reader :request
 
   def initialize(request)
+    @index = 0
     @request = request
+    @remote_file = RemoteFileValidator.new(@request).remote_file
   end
 
-  def processed_html
-    doc = Nokogiri::HTML(html)
-    doc.css("img").each do |link|
+  def html
+    document = Nokogiri::HTML(kramdown_html)
+    update_images_in_document(document)
+    update_links_in_document(document)
+    document.to_html
+  end
+
+  private
+
+  def kramdown_html
+    Kramdown::Document.new(remote_file_body).to_html
+  end
+
+  def remote_file_body
+    @remote_file.read
+  end
+
+  def update_images_in_document(document)
+    document.css("img").each do |link|
       src = link["src"]
       new_src = Link.new(src, @request.original_url).absolute_path
 
       link["src"] = new_src
     end
+  end
 
-    doc.css("a").each do |link|
+  def update_links_in_document(document)
+    document.css("a").each do |link|
       href = link["href"]
       new_href = Link.new(href, @request.original_url).parsed_href
 
       link["href"] = new_href
     end
-    doc
-  end
-
-  private
-
-  def html
-    Kramdown::Document.new(unprocessed_markdown).to_html
-  end
-
-  def unprocessed_markdown
-    open(unprocessed_markdown_file).read
-  end
-
-  def unprocessed_markdown_file
-    if path_to_file then path_to_file else path_to_directory end
-  end
-
-  def path_to_file
-    if File.extname(parsed_original_url.path).present?
-      git_raw_path
-    end
-  end
-
-  def path_to_directory
-    File.join(git_raw_path, query_url)
-  end
-
-  def git_raw_path
-    File.join(ENV["BASE_PATH"], local_path)
-  end
-
-  def local_path
-    parsed_original_url.path
-  end
-
-  def query_url
-    query_params["url"].first || "README.md"
-  end
-
-  def query_params
-    CGI::parse(querystring)
-  end
-
-  def querystring
-    parsed_original_url.query || ""
-  end
-
-  def parsed_original_url
-    URI::parse(request.original_url)
   end
 end

@@ -1,6 +1,6 @@
 module ApplicationHelper
   def markdown_to_html
-    MarkdownProcessor.new(request).processed_html
+    MarkdownProcessor.new(request).html
   end
 
   def breadcrumb
