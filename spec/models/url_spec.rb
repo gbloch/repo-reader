@@ -22,7 +22,7 @@ RSpec.describe Url do
         expect(result).to eq "/organization/repository/branch/file"
       end
     end
-    
+
     describe "#organization" do
       it "returns the git hub organization" do
         result = @parsed_url.organization
