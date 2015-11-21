@@ -1,4 +1,4 @@
-class BookUrlValidator
+class RepositoryUrlValidator
   def initialize(url)
     @url = url
   end
