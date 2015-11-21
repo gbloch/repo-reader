@@ -2,10 +2,12 @@
   max-width: $small-screen;
   margin: 0 auto;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .content--grid {
   max-width: $small-screen;
+  padding: 5rem 0;
 
   @include media($small-screen) {
     max-width: $large-screen;
@@ -17,7 +19,9 @@
 }
 
 .content--reading {
+  font-family: $base-font-family;
   max-width: $small-screen;
+  padding: 3rem 0;
 }
 
 .content__heading {
