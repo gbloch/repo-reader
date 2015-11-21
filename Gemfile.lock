@@ -58,6 +58,9 @@ GEM
     execjs (2.5.2)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
+    gemoji (2.1.0)
+    gemoji-parser (1.3.1)
+      gemoji (>= 2.1.0)
     hike (1.2.3)
     httparty (0.13.5)
       json (~> 1.8)
@@ -108,6 +111,8 @@ GEM
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
+    rails_autolink (1.1.6)
+      rails (> 3.1)
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.3)
     railties (4.1.5)
@@ -183,6 +188,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   dotenv-rails
   font-awesome-rails
+  gemoji-parser
   httparty
   jbuilder (~> 2.0)
   jquery-rails
@@ -194,6 +200,7 @@ DEPENDENCIES
   puma
   rails (= 4.1.5)
   rails_12factor
+  rails_autolink
   rspec-rails (~> 3.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)

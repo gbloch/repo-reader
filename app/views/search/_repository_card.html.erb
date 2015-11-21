@@ -9,7 +9,7 @@
       <%= repository["full_name"] %>
     </small>
     <p>
-      <%= truncate(repository["description"], length: 60) %>
+      <%= repository_description(repository) %>
     </p>
   </article>
   <footer>
