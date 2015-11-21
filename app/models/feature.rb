@@ -22,10 +22,4 @@ class Feature
   def repository_path
     "#{@api_response["owner"]}/#{@api_response["name"]}"
   end
-
-  def stargazers_count
-    count = @api_response["stargazers_count"].to_i
-
-    number_with_delimiter(count, delimiter: ",")
-  end
 end

@@ -23,14 +23,6 @@ RSpec.describe Feature do
     end
   end
 
-  describe "#stargazers_count" do
-    it "returns the number of stargazers for the repository" do
-      stargazers_count = @feature.stargazers_count
-
-      expect(stargazers_count).to eq "99"
-    end
-  end
-
   describe "#avatar_url" do
     it "returns the avatar url of the owner of the repository" do
       avatar_url = @feature.avatar_url
@@ -49,7 +41,6 @@ RSpec.describe Feature do
     json = {
       description: "This is the description.",
       name: "Name",
-      stargazers_count: 99,
       owner: {
         avatar_url: "https://example.com/image"
       }
