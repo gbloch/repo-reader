@@ -1,9 +1,15 @@
 module RepositoryCardHelper
   def repository_description(repository)
-    auto_link truncate(emojified_description(repository), length: 60)
+    if repository["description"]
+      truncated_description(repository["description"])
+    end
   end
 
-  def emojified_description(repository)
-    EmojiParser.detokenize(repository["description"])
+  def truncated_description(description)
+    truncate(emojified_description(description), length: 200)
+  end
+
+  def emojified_description(description)
+    EmojiParser.detokenize(description)
   end
 end
