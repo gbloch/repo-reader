@@ -2,7 +2,7 @@
 <svg width="19px" height="21px" viewBox="0 0 19 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <defs></defs>
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g stroke="#000000" stroke-width="3">
+        <g transform="translate(-1.000000, 0.000000)" stroke="#9013FE" stroke-width="3">
             <circle cx="8.5" cy="8.5" r="6.5"></circle>
             <path d="M13.1451623,14.6558483 L17.1599459,19.1147172"></path>
         </g>

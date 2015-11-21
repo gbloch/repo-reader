@@ -1,10 +1,23 @@
 .search-wrapper {
-  padding: 8rem 0 8rem;
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  justify-content: center;
+  min-height: 300px;
+
+  &.no-results {
+    height: 100vh;
+  }
 }
 
 .search {
   position: relative;
   padding: 0;
+  min-width: 320px;
+
+  @include media($small-screen) {
+    min-width: 420px;
+  }
 
   input {
     border: none;
@@ -15,15 +28,27 @@
 
   input[type="text"] {
     @include padding(null 0 null 0);
-    border-bottom: solid 2px $dark-gray;
+    border-bottom: solid 3px black;
     font-weight: 100;
     font-size: 1.125rem;
     width: 100%;
 
+    @include placeholder {
+      color: transparentize(black, 0.65);
+    }
+
     &:focus {
-      border-bottom: solid 2px $primary-color;
+      border-color: $primary-color;
       box-shadow: none;
       outline: none;
+
+      @include placeholder {
+        color: transparentize($primary-color, 0.5);
+      }
+
+      + input[type="submit"] {
+        background-image: image-url("magnifying-glass-focus.svg");
+      }
     }
   }
 

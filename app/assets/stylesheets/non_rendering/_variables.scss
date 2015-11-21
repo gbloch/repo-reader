@@ -3,10 +3,11 @@ $blue: #51a1ef;
 $purple: #9013FE;
 $light-gray: #EBEBEB;
 $dark-gray: #333;
+$purple-red: #fe139b;
 
 // Colors as Theme
 $primary-color: $purple;
-$secondary-color: $light-gray;
+$secondary-color: $purple-red;
 
 // Colors in action
 $base-background-color: $light-gray;
@@ -28,7 +29,7 @@ $primary-button-color: $primary-color;
 $primary-button-background-color: transparent;
 $primary-button-font: $sans-serif-font;
 
-$secondary-button-border: solid 3px $secondary-color;
+$secondary-button-border: solid 3px $light-gray;
 $secondary-button-color: darken($light-gray, 20%);
 $secondary-button-background-color: transparent;
 $secondary-button-font: $sans-serif-font;
