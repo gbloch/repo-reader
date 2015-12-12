@@ -1,11 +1,13 @@
 .card {
-  position: relative;
-  min-height: 360px;
   background: white;
+  border-radius: 3px;
+  box-shadow: 0 0.25rem 0.75rem rgba($black, 0.125);
   font-family: "Lato";
   font-weight: 300;
-  padding: 1.5rem 1.5rem 2.5rem;
   margin-bottom: 4rem;
+  min-height: 360px;
+  padding: 1.5rem 1.5rem 2.5rem;
+  position: relative;
 
   @include media(min-width $small-screen max-width $x-large-screen) {
     @include span-columns(6);

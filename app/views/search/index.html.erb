@@ -1,13 +1,23 @@
-<div class="layout layout--search">
-  <div class="content search-wrapper <%= search_wrapper_class %>">
-    <%= render "search" %>
+<div class="layout">
+  <div class="hero <%= has_results_class %>">
+    <%= image_tag "logo.svg" %>
+    <%- unless has_results? %>
+      <p class="hero__subheading">
+        Search GitHub repositories and read them like an ebook
+      </p>
+    <% end %>
+    <div class="search-wrapper">
+      <%= render "search" %>
+    </div>
   </div>
 </div>
 
-<section class="layout layout--search">
-  <section class="content content--grid">
-    <% @repositories.each do |repository| %>
-      <%= render partial: "repository_card", locals: { repository: repository } %>
-    <% end %>
+<%- if has_results? %>
+  <section class="layout">
+    <section class="content content--grid">
+      <% @repositories.each do |repository| %>
+        <%= render partial: "repository_card", locals: { repository: repository } %>
+      <% end %>
+    </section>
   </section>
-</section>
+<% end %>

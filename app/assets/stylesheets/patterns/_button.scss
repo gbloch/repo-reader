@@ -2,6 +2,7 @@
   background-color: $primary-button-background-color;
   border: $primary-button-border;
   color: $primary-button-color;
+  border-radius: 100px;
   cursor: pointer;
   display: inline-block;
   font-family: $primary-button-font;
@@ -27,4 +28,8 @@
     background-color: $secondary-color;
     color: white;
   }
+}
+
+.button--no-border {
+  border: none;
 }

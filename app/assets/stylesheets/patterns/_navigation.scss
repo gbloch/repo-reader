@@ -1,20 +1,27 @@
 .navigation {
-  background-color: $black;
+  background-color: $primary-background-color;
+  color: rgba(white, 0.5);
   font-family: $sans-serif-font;
   font-size: $base-font-size;
-  font-weight: 300;
+  font-weight: bold;
+  letter-spacing: 0.025rem;
   padding: 1.75rem 1rem;
-  color: rgba(white, 0.5);
+
+  a {
+    color: white;
+    display: inline-block;
+  }
 
   nav {
     @include clearfix;
+    text-align: center;
   }
 }
 
-.navigation__breadcrumb {
-  float: left;
-}
-
 .navigation__search {
-  float: right;
+  @include position(absolute, 1.5rem null null 1rem);
+
+  img {
+    height: 1.5rem;
+  }
 }

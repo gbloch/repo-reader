@@ -1,25 +1,31 @@
 // Colors
-$blue: #51a1ef;
-$purple: #9013FE;
-$light-gray: #EBEBEB;
-$dark-gray: #333;
-$purple-red: #fe139b;
 $black: #222;
+$blue: #518bf6;
+$dark-gray: #333;
+$light-gray: #EBEBEB;
+$purple-red: #fe139b;
+$purple: #9013FE;
+$white: #fff;
+
+// Layout
+$base-border-radius: 3px;
 
 // Colors as Theme
-$primary-color: $purple;
+$primary-color: #57d77b;
 $secondary-color: $purple-red;
 
 // Colors in action
-$base-background-color: $light-gray;
-$reading-background-color: lighten($light-gray, 7%);
+$base-background-color: lighten($light-gray, 7%);
 $base-font-color: $dark-gray;
+$primary-background-color: $primary-color;
+$link-color: $blue;
 
 // Fonts
 $sans-serif-font: "Lato", sans-serif;
 $serif-font: "Merriweather", cursive;
 $serif-font-alt: "Merriweather", serif;
 $base-font-size: 1rem;
+$large-font-size: $base-font-size * 1.25;
 $base-font-color: $dark-gray;
 $base-font-family: $serif-font-alt;
 $heading-font-family: $serif-font;

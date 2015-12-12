@@ -1,0 +1,29 @@
+.hero {
+  align-items: center;
+  background: $primary-background-color;
+  display: flex;
+  flex-direction: column;
+  height: 30vh;
+  justify-content: center;
+  min-height: 300px;
+  width: 100vw;
+
+  &.no-results {
+    height: 100vh;
+  }
+
+  p {
+    margin: 0 0 2rem;
+  }
+}
+
+
+.hero__subheading {
+  color: rgba(white, 0.75);
+  font-family: $sans-serif-font;
+  font-size: $large-font-size;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 2rem;
+  text-align: center;
+}

@@ -1,62 +1,40 @@
 .search-wrapper {
-  align-items: center;
-  display: flex;
-  height: 50vh;
-  justify-content: center;
-  min-height: 300px;
-  padding-bottom: 2rem;
-
-  &.no-results {
-    height: 100vh;
-  }
-}
-
-.search {
+  background-color: rgba(white, 0.2);
+  border-radius: $base-border-radius;
+  box-shadow: 0 0.25rem 0.5rem rgba($black, 0.125);
+  min-width: 400px;
+  padding: 1rem;
   position: relative;
-  padding: 0;
-  min-width: 320px;
 
   @include media($small-screen) {
-    min-width: 420px;
+    min-width: 640px;
   }
 
   input {
     background-color: transparent;
     border: none;
-    color: white;
     display: inline;
-    padding: 1.5rem;
-  }
-
-  input[type="text"] {
-    @include padding(null 0 null 0);
-    border-bottom: solid 3px white;
+    font-size: $base-font-size;
     font-weight: 100;
-    font-size: 1.125rem;
-    width: 100%;
+    padding: 1.5rem;
+    color: white;
 
     @include placeholder {
-      color: transparentize(white, 0.65);
+      color: transparentize($white, 0.55);
     }
 
     &:focus {
-      border-color: $primary-color;
       box-shadow: none;
       outline: none;
-
-      @include placeholder {
-        color: transparentize($primary-color, 0.5);
-      }
-
-      + input[type="submit"] {
-        background-image: image-url("magnifying-glass-focus.svg");
-      }
     }
   }
 
+  input[type="text"] {
+    width: 100%;
+  }
+
   input[type="submit"] {
-    @include position(absolute, 0.5rem 0rem null null);
-    background-color: transparent;
+    @include position(absolute, 0.9rem 0.5rem null null);
     background-image: image-url("magnifying-glass-white.svg");
     background-position: center center;
     background-repeat: no-repeat;

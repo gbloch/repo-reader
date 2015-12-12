@@ -1,13 +1,12 @@
 <% unless params[:controller] == "search" %>
   <header class="navigation">
     <nav>
-      <img src="" class="navigation__logo">
-      <span class="navigation__breadcrumb">
-        <%= raw breadcrumb %>
-      </span>
       <span class="navigation__search">
-        <%= link_to "Search", root_path %>
+        <%= link_to root_path do %>
+          <%= image_tag "logo.svg" %>
+        <% end %>
       </span>
+      <%= raw breadcrumb %>
     </nav>
   </header>
 <% end %>
