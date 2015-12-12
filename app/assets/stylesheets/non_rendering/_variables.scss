@@ -15,8 +15,9 @@ $primary-color: #57d77b;
 $secondary-color: $purple-red;
 
 // Colors in action
-$base-background-color: lighten($light-gray, 7%);
+$base-background-color: lighten($light-gray, 9%);
 $base-font-color: $dark-gray;
+$code-background-color: darken($base-background-color, 4%);
 $primary-background-color: $primary-color;
 $link-color: $blue;
 
@@ -24,11 +25,11 @@ $link-color: $blue;
 $sans-serif-font: "Lato", sans-serif;
 $serif-font: "Merriweather", cursive;
 $serif-font-alt: "Merriweather", serif;
-$base-font-size: 1rem;
+$base-font-size: 1.125rem;
 $large-font-size: $base-font-size * 1.25;
 $base-font-color: $dark-gray;
 $base-font-family: $serif-font-alt;
-$heading-font-family: $serif-font;
+$heading-font-family: $sans-serif-font;
 
 // Buttons
 $primary-button-border: solid 3px $primary-color;
