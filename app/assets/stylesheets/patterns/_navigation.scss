@@ -19,7 +19,7 @@
 }
 
 .navigation__search {
-  @include position(absolute, 1.5rem null null 1rem);
+  @include position(absolute, 1.75rem null null 1.75rem);
 
   img {
     height: 1.5rem;

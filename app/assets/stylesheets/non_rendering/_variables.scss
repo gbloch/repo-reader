@@ -2,6 +2,7 @@
 $black: #222;
 $blue: #518bf6;
 $dark-gray: #333;
+$green: #57d77b;
 $light-gray: #EBEBEB;
 $purple-red: #fe139b;
 $purple: #9013FE;
@@ -11,7 +12,7 @@ $white: #fff;
 $base-border-radius: 3px;
 
 // Colors as Theme
-$primary-color: #57d77b;
+$primary-color: $green;
 $secondary-color: $purple-red;
 
 // Colors in action
@@ -19,7 +20,7 @@ $base-background-color: lighten($light-gray, 9%);
 $base-font-color: $dark-gray;
 $code-background-color: darken($base-background-color, 4%);
 $primary-background-color: $primary-color;
-$link-color: $blue;
+$link-color: mix(black, $green, 20%);
 
 // Fonts
 $sans-serif-font: "Lato", sans-serif;
