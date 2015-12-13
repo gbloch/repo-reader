@@ -6,7 +6,7 @@ RSpec.describe RemoteFileValidator do
       it "returns a valid remote file" do
         stub_request_with_path("readme.md", [200, "Okay"])
         request = double("request")
-        request.stub(:original_url)
+        allow(request).to receive(:original_url)
           .and_return("https://raw.githubusercontent.com/readme.md")
 
         response = RemoteFileValidator.new(request)
@@ -19,7 +19,7 @@ RSpec.describe RemoteFileValidator do
       it "returns a valid remote file" do
         stub_request_with_path("readme.md", [404, "Not Found"])
         request = double("request")
-        request.stub(:original_url)
+        allow(request).to receive(:original_url)
           .and_return("https://raw.githubusercontent.com/readme.md")
 
         response = RemoteFileValidator.new(request)
@@ -35,7 +35,7 @@ RSpec.describe RemoteFileValidator do
         stub_request_with_path("Readme.md", [404, "Not Found"])
         stub_request_with_path("readme.markdown", [200, "Okay"])
         request = double("request")
-        request.stub(:original_url)
+        allow(request).to receive(:original_url)
           .and_return("https://raw.githubusercontent.com/")
 
         response = RemoteFileValidator.new(request)
@@ -51,7 +51,7 @@ RSpec.describe RemoteFileValidator do
       it "returns a full path to the README.md" do
         stub_request_with_path("directory", [200, "Okay"])
         request = double("request")
-        request.stub(:original_url)
+        allow(request).to receive(:original_url)
           .and_return("https://raw.githubusercontent.com/directory")
         remote_file_path = RemoteFileValidator.new(request).remote_file_path
 
@@ -63,7 +63,9 @@ RSpec.describe RemoteFileValidator do
       it "returns a full path to the somefile.md" do
         stub_request_with_path("somefile.md", [200, "Okay"])
         request = double("request")
-        request.stub(:original_url).and_return("https://raw.githubusercontent.com/somefile.md")
+        allow(request).to receive(:original_url)
+          .and_return("https://raw.githubusercontent.com/somefile.md")
+
         remote_file_path = RemoteFileValidator.new(request).remote_file_path
 
         expect(remote_file_path).to eq "https://raw.githubusercontent.com/somefile.md"

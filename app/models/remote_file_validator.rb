@@ -24,7 +24,11 @@ class RemoteFileValidator
     end
   end
 
-  private
+  def remote_file_path
+    if path_to_file then path_to_file else path_to_directory end
+  end
+
+  protected
 
   def retry_on_error(error)
     if @index == README_VARIATIONS.count - 1
@@ -33,10 +37,6 @@ class RemoteFileValidator
       @index += 1
       remote_file
     end
-  end
-
-  def remote_file_path
-    if path_to_file then path_to_file else path_to_directory end
   end
 
   def path_to_file

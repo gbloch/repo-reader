@@ -27,7 +27,7 @@ RSpec.describe MarkdownProcessor do
     stub_request(:get, "https://raw.githubusercontent.com/#{path}").
       to_return(status: status, body: "Hello world!", headers: {})
       request = double("request")
-      request.stub(:original_url)
+      allow(request).to receive(:original_url)
         .and_return("https://raw.githubusercontent.com/readme.md")
       request
   end
